@@ -4,7 +4,7 @@ env.Append(CCFLAGS='-std=c++0x')
 
 # env.Program(target = 'hex', source = ["src/bsontools/hex.cpp"])
 
-env.Program(target = 'hex', source = ["src/bsontools/hex.cpp"])
+
 
 dep1 = [
     "../bson-cxx/src/bson/time_support.cpp",
@@ -15,6 +15,8 @@ dep2 = [
     "../bson-cxx/src/bson/json.cpp",
     "../bson-cxx/src/bson/base64.cpp"
     ]
+
+env.Program(target = 'hex', source = ["src/bsontools/hex.cpp"] + dep1)
 
 env.Program(target = 'fromcsv', source = ["src/bsontools/fromcsv.cpp"] + dep1)
 
